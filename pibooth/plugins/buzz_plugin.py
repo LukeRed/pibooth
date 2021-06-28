@@ -178,7 +178,9 @@ class BuzzPlugin(object):
     @pibooth.hookimpl
     def pibooth_cleanup(self, app):
         LOGGER.info("Buzz cleaning")
+        self.buzz.set_lights(0)
         self.buzz.is_running = False
+
 
     @pibooth.hookimpl
     def state_wait_do(self, cfg, app, win, events):
