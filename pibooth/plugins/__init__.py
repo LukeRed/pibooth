@@ -3,6 +3,7 @@
 import inspect
 import pluggy
 
+from pibooth.plugins.flash_plugin import FlashPlugin
 from pibooth.utils import LOGGER, load_module
 from pibooth.plugins import hookspecs
 from pibooth.plugins.camera_plugin import CameraPlugin
@@ -74,7 +75,8 @@ class PiPluginManager(pluggy.PluginManager):
                     PrinterPlugin(self),
                     PicturePlugin(self),
                     CameraPlugin(self),
-                    BuzzPlugin(self)]  # First called
+                    BuzzPlugin(self),
+                    FlashPlugin(self)]  # First called
 
         for plugin in plugins:
             self.register(plugin)
