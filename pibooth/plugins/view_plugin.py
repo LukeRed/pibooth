@@ -20,7 +20,7 @@ class ViewPlugin(object):
         # Seconds before going back to the start
         self.choose_timer = PoolingTimer(30)
         # Seconds to display the selected layout
-        self.layout_timer = PoolingTimer(4)
+        self.layout_timer = PoolingTimer(0.5)
         # Seconds to display the selected layout
         self.print_view_timer = PoolingTimer(0)
         # Seconds to display the selected layout
